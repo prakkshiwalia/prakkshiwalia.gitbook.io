@@ -1,4 +1,4 @@
-# Feature Prioritization Scoring tool
+# Product - Feature Prioritization Scoring tool
 
 The **RICE framework** is a prioritization method used by product managers to evaluate and prioritize different features, ideas, or projects. It helps in making data-driven decisions by scoring and ranking options based on specific criteria. In short, RICE helps product managers make informed and consistent decisions about what to work on next!      &#x20;
 
@@ -39,5 +39,3 @@ RICE score= (10,000×2×0.8)/ 5= 3,200
 * **Objective decision-making**: It helps product teams focus on initiatives that have the biggest impact relative to the effort required.
 * **Resource allocation**: It allows product managers to allocate resources (time, effort, budget) effectively, especially when working on multiple initiatives.
 * **Prioritization**: It provides a clear framework to compare different product ideas, features, or tasks, ensuring that the highest-value items are prioritized.
-
-&#x20;                                                                                                                                                                                                                                &#x20;
