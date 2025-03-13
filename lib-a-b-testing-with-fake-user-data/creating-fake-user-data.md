@@ -4,3 +4,65 @@ description: 'Using the Faker library, I''ll be generating the fake data for 20 
 
 # Creating Fake User Data
 
+**Why do we need random when faker already generates fake data?**
+
+Faker is great for realistic data like names, countries, and UUIDs, but it does not handle:
+
+* Random numeric values within a range (e.g., age, clicks, conversion status).
+* Random categorical choices (e.g., A/B test group assignment).
+* Controlled randomness using random.seed() for reproducibility.
+
+So, we use random  for fine-tuned randomness where Faker isn't designed to work.
+
+**Breakdown of the below code:**
+
+* The random module in python is used to generate random values for various attributes in the fake A/B testing dataset. It ensure the data looks natural and simulates real-world user behavior.&#x20;
+* The random.seed ensure that the random values stay the same each time you run the script.&#x20;
+* random.randit(18, 60) generates  a random integer between 18 and 60 and ensure that each user has a realistic age range.&#x20;
+* "group": random.choice\["A", "B"]) randomly assigns each user to either Group A or Group B and helps in simulating an A/B testing experiment where users get different experiences.&#x20;
+* How to save data in a CSV format? - index=False is used to prevent pandas from writing the default index column (to not save it in the file) and "encoding="utf-8" ensures the file supports special characters (which is optional but useful)
+
+Syntax: df.to\_csv("filename.csv", index=False, encoding="utf-8")
+
+```
+import pandas as pd
+from faker import Faker
+import random
+
+#Initailize Faker
+fake = Faker()
+
+#set a random seed for reproducibility
+random.seed(42)
+fake.seed_instance(42) #to make sure Faker generates the same random values each time as it also had its own randomness stored somewhere in the module 
+
+
+#Generate and print a fake name
+#We only need a placeholder like _ to run the loop and didn't necessarily need it for generating sequential user IDs.
+users = []
+for _ in range(1, 21):
+    user = {
+        "user_id": "PWR" + str(100+ _),
+        "name": fake.name(),
+        "age": random.randint(18,60),
+        "country": fake.country(),
+        "group": random.choice(["A", "B"]),
+        "clicks": random.randint(0,20),
+        "converted": random.choice([0, 1])
+    }
+    users.append(user)
+
+#Create DataFrame
+df = pd.DataFrame(users)
+
+#to shift the default index from 0 to 1 in pandas
+df.index = df.index + 1
+
+print(df)
+
+#below is done to save the data in a csv file 
+df.to_csv("ab_testing_data.csv", index=False)
+
+print("Wohoo! Data saved successfully, 1/3rd of your project is complete!")
+
+```

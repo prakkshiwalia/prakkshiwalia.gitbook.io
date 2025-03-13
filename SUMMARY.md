@@ -42,6 +42,7 @@
   * [Faker](python-libraries/faker.md)
 * [Lib: A/B Testing with Fake User Data](lib-a-b-testing-with-fake-user-data/README.md)
   * [Creating Fake User Data](lib-a-b-testing-with-fake-user-data/creating-fake-user-data.md)
+  * [Pandas](lib-a-b-testing-with-fake-user-data/pandas.md)
 * [Product - Feature Prioritization Scoring tool](product-feature-prioritization-scoring-tool/README.md)
   * [Code Breakup](product-feature-prioritization-scoring-tool/code-breakup.md)
 * [Product - Customer Feedback Sentiment Analysis Tool](product-customer-feedback-sentiment-analysis-tool.md)
