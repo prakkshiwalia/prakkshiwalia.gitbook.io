@@ -1,5 +1,6 @@
 ---
 description: For terminal
+hidden: true
 ---
 
 # Notes for terminal

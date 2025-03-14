@@ -19,3 +19,14 @@ df = pd.read_csv("user_data.csv")  # Read the CSV file into a DataFrame
 print(df.head())  # View the first few rows of the dataset
 </code></pre>
 
+### Table of Pandas Functions generally used and Real-Life case scenarios
+
+| **Pandas Function**                                              | **Purpose in This Code**                                     | **Other Real-Life Use Cases**                                                         |
+| ---------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| pd.read\_csv("file.csv")                                         | Load the A/B testing dataset                                 | Reading sales reports, customer databases, or stock market data.                      |
+| df.info()                                                        | Show dataset structure (columns, data types, missing values) | Checking data quality in survey responses or product inventory.                       |
+| df.describe()                                                    | Summary statistics for numerical data                        | Analyzing website traffic, marketing campaign performance, or test scores.            |
+| df\["group"].value\_counts()                                     | Count users in A/B test groups                               | Counting product categories in e-commerce, tracking survey responses.                 |
+| df.groupby("group").agg({"clicks": "mean", "converted": "mean"}) | Calculate average clicks and conversion rates                | Finding average customer spending per region, analyzing user engagement per platform. |
+| df.index = df.index + 1                                          | Shift DataFrame index to start from 1                        | Reindexing rows after filtering or merging datasets (e.g., employee records).         |
+| df.to\_csv("cleaned\_data.csv", index=False)                     | Save cleaned dataset for further analysis                    | Exporting processed data for reporting, saving filtered customer lists.               |
